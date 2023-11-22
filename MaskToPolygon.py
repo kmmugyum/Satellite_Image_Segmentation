@@ -2,6 +2,8 @@ import sys
 import cv2
 from rdp import rdp
 import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
 
 sys.setrecursionlimit(1000000000)
 
@@ -17,7 +19,8 @@ class MaskToPolygon:
         self.threshold = threshold
         
     def __call__(self, image: np.ndarray, option:str="B"):
-        image = image.astype(np.uint8) * 255
+        image = self.post_processing(image)
+        image = image.astype(np.uint8)
         image = self.image_dilation_erosion(image)
         
         if image.shape[0] != 512 or image.shape[1] != 512:
@@ -128,9 +131,7 @@ class MaskToPolygon:
             plt.imshow(img)
             plt.subplot(1, 2, 2)
             plt.imshow(contour_img)
-
-
-import time
-start = time.time()
-MTP = MaskToPolygon()
-image = np.array(pred[13])
+            
+    def post_processing(self, pred):
+        pred = tf.one_hot(np.argmax(pred, -1), 3)
+        return np.array(pred, dtype=np.float32)
