@@ -6,11 +6,24 @@
 
 
 ## Input, Output Info
+
 ### Input Image 
-#### Size: (512, 512, 3)
+#### Shape: (512, 512, 3)
 #### Channel: R - Crop, G - Vinyl, B - Background
+
 ### Output Image
-### Size
+### Shape
 #### Option "B": (512, 512, 3) 
 #### Option "C" (Crop): (512, 512) 
 #### Option "V" (Vinyl): (512, 512) 
+
+## Parameters
+
+### Options
+#### Option "B": (512, 512, 3) 
+#### Option "C" (Crop): (512, 512) 
+#### Option "V" (Vinyl): (512, 512) 
+
+### Epsilon
+#### default value is 5
+#### If you want strict polygon shape, increase epsilon value
