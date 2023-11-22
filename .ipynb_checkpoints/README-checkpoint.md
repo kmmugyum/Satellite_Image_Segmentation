@@ -6,29 +6,11 @@
 
 
 ## Input, Output Info
-<div>
-    <h1>
-    Input Image 
-        <h2>
-            Size: (512, 512, 3)
-        </h2>
-        <h2>
-            Channel: R - Crop, G - Vinyl, B - Background
-        </h2>
-    </h1>
-    <h1>
-        Output Image
-        <h2>
-            Size
-            <h3>
-                Option "B": (512, 512, 3) 
-            </h3>
-            <h3>
-                Option "C" (Crop): (512, 512) 
-            </h3>
-            <h3>
-                Option "V" (Vinyl): (512, 512) 
-            </h3>
-        </h2>
-    </h1>
-</div>
+### Input Image 
+#### Size: (512, 512, 3)
+#### Channel: R - Crop, G - Vinyl, B - Background
+### Output Image
+### Size
+#### Option "B": (512, 512, 3) 
+#### Option "C" (Crop): (512, 512) 
+#### Option "V" (Vinyl): (512, 512) 
